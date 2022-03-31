@@ -26,28 +26,6 @@ const NavBar = () => {
     }
 
 
-    const detectPage = () => {
-
-        const pages = ['/' , '/crew' , '/destination' , '/technology']
-
-        const id = pages.indexOf(window.location.pathname)
-
-        console.log(window.location.pathname)
-
-        
-        return id
-
-        }
-
-    if(typeof window !== 'undefined'){
-
-
-
-    }
-
-
-
-
   
     return (
         <ul className={navbar.nav} >
