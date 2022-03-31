@@ -4,12 +4,12 @@ import Link  from 'next/link'
 import { useState } from 'react'
 
 
-
+import { useRouter } from "next/router";
 
 const NavBar = () => {
 
 
-    
+    const router = useRouter();
 
     const [menu , setMenu] = useState(false)
 
@@ -31,7 +31,7 @@ const NavBar = () => {
       
         const list =[ '/' ,'/destination', '/crew', '/technology']
     
-        const id =   list.indexOf(window.location.pathname);
+        const id =   list.indexOf(router.pathname);
     
         setWhich(id)
         
