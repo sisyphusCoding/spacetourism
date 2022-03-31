@@ -13,7 +13,11 @@ const NavBar = () => {
 
     const [menu , setMenu] = useState(false)
 
-    const [which,setWhich] = useState(0)
+    const lists =[ '/' ,'/destination', '/crew', '/technology']
+    
+    const id =   lists.indexOf(router.pathname);
+
+    const [which,setWhich] = useState(id)
 
     const list =[ 'home','destination', 'crew', 'technology']
 
@@ -27,22 +31,14 @@ const NavBar = () => {
 
 
 
-    const detectPage = () =>{
+    
       
-        const list =[ '/' ,'/destination', '/crew', '/technology']
-    
-        const id =   list.indexOf(router.pathname);
-    
-        setWhich(id)
         
-  
-    }
+    
+        
 
-    if(typeof window !== 'undefined'){
+    
 
-        window.addEventListener('load', detectPage)
-
-    }
 
 
   
