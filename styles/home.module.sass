@@ -3,13 +3,12 @@
 
 
 .bodyWrap
-    @include flex(center,space-between,column)
+    @include flex(center,flex-end,column)
     height: 100vh
     width: 100vw
     //debug off on
-    @include deb
+    
     padding: 1vh 1vw
-    @include blur(3)
     @media only screen and (min-width: 1002px)
         background: url('../images/home/background-home-desktop.jpg')
         background-repeat: none
@@ -25,12 +24,9 @@
     .content
         height: 80%
         width: 100%
-        @include deb
         @include flex(center,space-around,row wrap)
         .right
-            @include deb
             @include flex(center,flex-end,column)
-            
             @media only screen and (min-width: 1002px)
                 height: 100%
                 width: 50%
@@ -53,7 +49,6 @@
                     font-size: 3vw
                 
         .left
-            @include deb
             gap: 4vw
             @media only screen and (min-width: 1002px)
                 @include flex(flex-start,center,column)
