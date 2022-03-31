@@ -31,7 +31,6 @@ const Destination = () => {
 <section className={dest.content} >
         <div className={dest.left}>
           <div className={dest.text} ><span>01</span>Pick your destination</div>
-          
           <div className={dest.imgWrap}  >
                 <Image src={imgs[which]} alt={planets[which]} layout='responsive' />
           </div>

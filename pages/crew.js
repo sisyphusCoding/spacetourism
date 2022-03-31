@@ -28,10 +28,8 @@ const Crew = () => {
         <div className= {crew.bodyWrap} >
 
 <section className={crew.content} >
+        <div className={crew.text} ><span>02</span>Meet your crew member</div>      
         <div className={crew.left}>
-
-            <div className={crew.text} ><span>02</span>Meet your crew member</div>
-
             <h3>{role[person]}</h3>
             <h1>{name[person]}</h1>
             <p>{description[person]}</p>

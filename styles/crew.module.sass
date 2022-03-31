@@ -19,14 +19,34 @@
     @media only screen and (min-width: 1px) and (max-width: 549px)
         background: url('../images/crew/background-crew-mobile.jpg')
         background-repeat: none
-        background-size: cover   
+        background-size: cover  
+    .text
+        width: 100%
+        height: 10%
+        align-self: flex-start
+        font-size: 2.5vh
+        letter-spacing: .3vw   
+        @include sans
+        text-transform: uppercase
+        @media only screen and (min-width: 1px) and (max-width: 1001px) 
+                position: absolute
+                top: 15%
+        @media only screen and (min-width: 1002px) 
+                position: relative            
+        span
+            @include sans
+            color: rgba(170, 170, 170, .7)
+            font-weight: bold 
+            font-size: 3vh
+            padding: 0 1vh       
     .content
         height: 87%
         width: 100%
         @media only screen and (min-width: 1px) and (max-width: 499px)   
-            @include flex(center,space-around,column-reverse)
+            @include flex(center,center,column-reverse)
         @media only screen and (min-width: 501px) and (max-width: 1001px)          
-            @include flex(center,space-around,column)    
+            @include flex(center,center,column)  
+            
         @media only screen and (min-width: 1002px)
             @include flex(center,space-around,row wrap)    
         .left,.right
@@ -35,15 +55,16 @@
                 width: 50%
                 padding-left: 4vh
             @media only screen and (min-width: 1px) and (max-width: 1001px)   
-                height: 50%
+                height: fit-content
                 width: 100%   
                 padding-left: 0 
-            
+                max-height: 40%
+                
+                gap: 2vh
         .right
             @include flex(flex-end,center,row)
             overflow: hidden
             .imgWrap
-                   
                 @media only screen and (min-width: 1px) and (max-width: 500px)   
                     width: 60vw
                     max-height: 100%
@@ -68,10 +89,15 @@
                     text-align: left
                     width: 100%
             h1
+                text-transform: uppercase
+                
+                max-width: 100%
                 @media only screen and (min-width: 1px) and (max-width: 1001px)  
-                    font-size: 10vw
+                    font-size: 7vw
+                    letter-spacing: .8vw
                 @media only screen and (min-width:1002px)    
                     font-size: 10vh
+                    letter-spacing: 1vw
             h3
                 @media only screen and (min-width: 1px) and (max-width: 1001px)  
                     font-size: 4vw
@@ -79,20 +105,7 @@
                     font-size: 5vh
                 text-transform: uppercase
                 color: rgba(170, 170, 170, .7)            
-            .text
-                width: 100%
-                height: 10%
-                align-self: flex-start
-                font-size: 2.5vh
-                letter-spacing: .3vw   
-                @include sans
-                text-transform: uppercase
-                span
-                    @include sans
-                    color: rgba(170, 170, 170, .7)
-                    font-weight: bold 
-                    font-size: 3vh
-                    padding: 0 1vh  
+
             p
                 font-size: 2vh
                 @include sans
