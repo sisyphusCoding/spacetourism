@@ -37,7 +37,7 @@ const description = ["A launch vehicle or carrier rocket is a rocket-propelled v
        <section className={tech.left} > 
         <div className={tech.btnWrap}>
             {techn.map((item, index) => (
-                <span onClick={()=>{setWhich(index)}}     style = {which == index? {background: 'white' , color: 'black' , border: '1px solid black' } :  {background:'rgba(255,255,255,.0)' , border: '1px solid white' }}   >{index +1}</span>
+                <span key={index} onClick={()=>{setWhich(index)}}     style = {which == index? {background: 'white' , color: 'black' , border: '1px solid black' } :  {background:'rgba(255,255,255,.0)' , border: '1px solid white' }}   >{index +1}</span>
             ))}
 
         </div>
