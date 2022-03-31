@@ -1,25 +1,36 @@
 import navbar from '../styles/nav.module.sass'
 import Link  from 'next/link'
 
-import { useState } from 'react'
+import { useState ,useEffect } from 'react'
 
 
-import { useRouter } from "next/router";
+import { useRouter  } from "next/router";
 
 const NavBar = () => {
 
 
     const router = useRouter();
 
+
+        useEffect(() =>{
+            const lists =[ '/' ,'/destination', '/crew', '/technology']
+            const id =   lists.indexOf(router.pathname);
+
+            setWhich(id)
+
+        },[router.pathname])
+
     const [menu , setMenu] = useState(false)
 
     const lists =[ '/' ,'/destination', '/crew', '/technology']
-    
+
     const id =   lists.indexOf(router.pathname);
 
     const [which,setWhich] = useState(id)
 
     const list =[ 'home','destination', 'crew', 'technology']
+
+
 
     const toggleMenu = (index) => {
         setWhich(index) 
@@ -32,13 +43,7 @@ const NavBar = () => {
 
 
     
-      
-        
     
-        
-
-    
-
 
 
   
