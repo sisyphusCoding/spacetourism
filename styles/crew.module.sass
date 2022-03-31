@@ -1,0 +1,124 @@
+@import '_mixin'
+
+
+
+.bodyWrap
+    @include flex(center,flex-end,column)
+    height: 100vh
+    width: 100vw
+    //debug off on
+    
+    padding: 1vh 1vw
+    @media only screen and (min-width: 1002px)
+        background: url('../images/crew/background-crew-desktop.jpg')
+        background-repeat: none
+        background-size: cover
+    @media only screen and (min-width: 550px) and (max-width: 1001px)
+        background: url('../images/crew/background-crew-tablet.jpg')
+        background-repeat: none
+        background-size: cover
+    @media only screen and (min-width: 1px) and (max-width: 549px)
+        background: url('../images/crew/background-crew-mobile.jpg')
+        background-repeat: none
+        background-size: cover   
+    .content
+        height: 87%
+        width: 100%
+        @media only screen and (min-width: 1px) and (max-width: 499px)   
+            @include flex(center,space-around,column-reverse)
+        @media only screen and (min-width: 501px) and (max-width: 1001px)          
+            @include flex(center,space-around,column)    
+        @media only screen and (min-width: 1002px)
+            @include flex(center,space-around,row wrap)    
+        .left,.right
+            @media only screen and (min-width: 1002px)
+                height: 100%
+                width: 50%
+                padding-left: 4vh
+
+            @media only screen and (min-width: 1px) and (max-width: 1001px)   
+                height: 50%
+                width: 100%   
+                padding-left: 0 
+            
+        .right
+            @include flex(flex-end,center,row)
+            overflow: hidden
+            .imgWrap
+                   
+                @media only screen and (min-width: 1px) and (max-width: 500px)   
+                    width: 60vw
+                    max-height: 100%
+                @media only screen and (min-width: 501px) and (max-width: 1001px)   
+                    max-width: 38vw
+                    width: 40vw
+                    max-height: 100%
+                @media only screen and (min-width:1002px)    
+                    width: 40vw 
+                    height: fit-content
+                    max-height: 100%
+        .left
+            @media only screen and (min-width: 1px) and (max-width: 1001px)  
+                @include flex(center,space-between,column)
+                padding: 5vw 0
+                > *
+                    text-align: center
+                    width: fit-content
+            @media only screen and (min-width:1002px)    
+                @include flex(flex-start,center,row wrap)
+                > *
+                    text-align: left
+                    width: 100%
+            h1
+                @media only screen and (min-width: 1px) and (max-width: 1001px)  
+                    font-size: 10vw
+                @media only screen and (min-width:1002px)    
+                    font-size: 10vh
+            h3
+                @media only screen and (min-width: 1px) and (max-width: 1001px)  
+                    font-size: 4vw
+                @media only screen and (min-width:1002px)    
+                    font-size: 5vh
+                text-transform: uppercase
+                color: rgba(170, 170, 170, .7)            
+            .text
+                width: 100%
+                height: 10%
+                align-self: flex-start
+                font-size: 2.5vh
+                letter-spacing: .3vw   
+                @include sans
+                text-transform: uppercase
+                span
+                    @include sans
+                    color: rgba(170, 170, 170, .7)
+                    font-weight: bold 
+                    font-size: 3vh
+                    padding: 0 1vh  
+            p
+                font-size: 2vh
+                @include sans
+                color: $blue
+                @media only screen and (min-width: 1px) and (max-width: 1001px)   
+                    text-align: center
+                    width: 70%
+                    padding-right: 0
+                @media only screen and (min-width:1002px)  
+                    text-align: left  
+                    padding-right: 10vw 
+                    width: 100% 
+           
+            section
+                @media only screen and (min-width: 1px) and (max-width: 1001px)   
+                    @include flex(center,center,row)
+                @media only screen and (min-width:1002px)  
+                    @include flex(center,flex-start,row)  
+
+                gap: 3vh
+                span
+                    height: 3vh
+                    aspect-ratio: 1
+                    cursor: pointer
+                    border-radius: 50%
+                    
+

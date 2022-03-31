@@ -5,7 +5,11 @@ import { useState } from 'react'
 
 
 
+
 const NavBar = () => {
+
+
+    
 
     const [menu , setMenu] = useState(false)
 
@@ -20,6 +24,28 @@ const NavBar = () => {
             setMenu(false)
         } return
     }
+
+
+    const detectPage = () => {
+
+        const pages = ['/' , '/crew' , '/destination' , '/technology']
+
+        const id = pages.indexOf(window.location.pathname)
+
+        console.log(window.location.pathname)
+
+        
+        return id
+
+        }
+
+    if(typeof window !== 'undefined'){
+
+
+
+    }
+
+
 
 
   

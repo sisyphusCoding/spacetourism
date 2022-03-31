@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps , router }) {
 <AnimatePresence >
 
   <motion.div
-  key={router.route} initial="pageInitial" animate="pageAnimate" exit="exit"
+  key={router.route} initial="pageInitial" animate="pageAnimate" 
     variants={{
       pageInitial: {
         opacity: 0, x: 100,
@@ -36,8 +36,6 @@ function MyApp({ Component, pageProps , router }) {
         opacity: 0, x: -300,
         transition: {
           staggerChildren: 1 ,
-          duration: .2,
-          
         }
       },
 
