@@ -38,7 +38,7 @@ const Crew = () => {
 
             <section>
                 {name.map((item, index) => (
-                    <span onClick={()=>{setPerson(index)}}  style= { person === index ? {background: 'white'} : {background: 'rgba(255,255,255,.2)'}  }       ></span>
+                    <span key={index} onClick={()=>{setPerson(index)}}  style= { person === index ? {background: 'white'} : {background: 'rgba(255,255,255,.2)'}  }       ></span>
                 ))}
             </section>
          
