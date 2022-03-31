@@ -1,0 +1,135 @@
+@import _mixin
+
+
+.nav
+    @include flex (center,space-between,row wrap)
+    height: 12%
+    width: 100%
+    padding: 0vh  2vh  
+    .innerWrap
+        background: rgba(170, 170, 170, .1)
+        @include flex (center,space-evenly,row wrap)
+        z-index: 3
+        width: 65vw
+        height: 100%
+        @include blur(3)
+        border-radius: 1vh
+        padding: 0vh 5vw
+        box-shadow: rgba(0,0,0,1) 0 0 5vh -.5vh 
+        text-transform: uppercase
+        font-size: 1.4vh
+    .menu
+        outline: none
+        border: none
+        background: transparent !important
+        padding: 0
+        cursor: pointer
+        height: 3.5vh
+        width: 6vh
+        position: relative
+        @include flex(center,center,column)
+        display: none
+        > *
+            height: .3vh
+            width: 4.5vh
+            border-radius: .5vh
+            position: absolute
+            background: rgba(255,255,255,.8)
+            transition: all 1s $cubic
+            &:first-child
+                top: .3vh
+            &:last-child
+                bottom: .3vh    
+                
+            
+    .logoIMG
+        height: 5vh
+        width: 5vh  
+        border-radius: 50% 
+        @include flex (center,center,row)
+        z-index: 1
+        img
+            height: 100%
+            width: auto
+            object-fit: contain
+    
+
+
+
+@include animate(fadeIn , 0 , 5)       
+@include animate(fadeInV , 5 , 0)  
+
+
+.innerWrap
+    animation: fadeIn 1s ease 500ms both
+    li
+        @for $i from 1 through 4
+            &:nth-child(#{$i})
+                animation: fadeIn 1s $cubic $i / 20 + .9s both
+
+@media (max-width: 820px)  
+    .Hrline
+        display: none 
+    .nav
+        align-self: flex-start
+        top: 0
+        .innerWrap
+            li
+                strong
+                    display: none !important
+
+
+@media (max-width: 480px)
+    .menu
+        display: flex !important   
+        z-index: 10   !important    
+    .innerWrap
+        max-width: 70vw 
+        height: 100vh !important     
+        top: 0
+        right: 0
+        width: 60vw  !important     
+        padding: 5vh 10vw 5vh 2vw !important
+        border-radius: 0 !important
+        position: absolute
+        flex-flow: column wrap !important
+        justify-content: center !important
+        align-items: stretch !important
+        gap: 4vw !important
+        transition: all 1s $cubic
+        animation: none !important
+        li
+            padding-bottom: 2vh
+            border-bottom: 2px solid rgba(170, 170, 170, .6)
+            transition: all 400ms ease
+            &:hover,&::after
+                border-bottom: 2px solid rgba(255, 255, 255, 1)
+    
+@media (max-width: 480px)
+    .innerWrap
+        width: 65vw  !important   
+        max-width: 70vw   
+
+
+
+@media (min-width: 481px)
+    .innerWrap
+        li
+            position: relative
+            z-index: 1
+            justify-content: stretch
+            height: 100%
+            text-align: center
+            vertical-align: middle
+            display: inline-block
+            transition: all 200ms ease
+            @include flex(center,center,row)
+            div
+                height: fit-content
+                
+                width: 100%
+            strong
+                height: 100%
+                width: 100%
+                filter: brightness(200%)
+                color: $white        

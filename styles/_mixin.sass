@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300&display=swap')
+
+@mixin deb
+	border: 1px solid green
+	
+@mixin sans
+	font-family: 'Barlow Condensed', sans-serif
+
+@mixin blur($i)
+		backdrop-filter: blur($i + vh)  
+		-webkit-backdrop-filter: blur($i + vh)  
+		-moz-backdrop-filter: blur($i + vh)  
+
+@mixin flex($align-items, $justify-content , $flex-flow , )
+		display: flex
+		align-items: $align-items
+		justify-content: $justify-content 
+		flex-flow: $flex-flow
+	
+@mixin animate($name ,$x ,$y)	
+	@keyframes #{$name}
+		from
+			transform: translate3d($x + vh,$y + vh,0)
+			opacity: 0
+			clip-path: polygon(0 100%, 16% 100%, 88% 100%, 85% 100%, 100% 100%, 100% 15%, 100% 100%, 84% 100%, 85% 100%, 15% 100%, 15% 100%, 0 100%)
+		to
+			transform: translate3d(0,0,0)
+			opacity: 1
+			clip-path: polygon(0% 15%, 0 0, 15% 0%, 85% 0%, 100% 0, 100% 15%, 100% 85%, 100% 100%, 85% 100%, 15% 100%, 0 100%, 0% 85%)
+		
+
+$cubic: cubic-bezier(.5,2,0,1)
+	
+@mixin clear
+	padding: 0
+	margin: 0
+	list-style: none	
+
+$blue: hsl(231°, 77%, 90%)
+$white: hsl(0, 0%, 100%)
+$black: hsl(230°, 35%, 7%)

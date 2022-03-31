@@ -1,0 +1,25 @@
+@import _mixin
+    
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap')
+
+
+
+*
+	box-sizing: border-box
+	color:  $white
+	font-family: 'Bellefair', serif
+	text-decoration: none
+	-webkit-touch-callout:none
+	@include clear
+	-webkit-touch-callout: none
+	-webkit-tap-highlight-color: transparent
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+body 
+	transition: all 400ms ease
+	@include flex(center,center,row)
+	min-height: 100vh
+	overflow: hidden
+	padding: 0
+	
