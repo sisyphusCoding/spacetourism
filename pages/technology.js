@@ -5,6 +5,8 @@ import { useState  } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
+
+
 import port0 from '../images/technology/image-launch-vehicle-portrait.jpg'
 import port1 from '../images/technology/image-space-capsule-portrait.jpg'
 import port2 from '../images/technology/image-spaceport-portrait.jpg'
@@ -42,18 +44,59 @@ const description = ["A launch vehicle or carrier rocket is a rocket-propelled v
 
         </div>
 
-        <div className={tech.cont}>
+        <motion.div className={tech.cont}
+
+            key={which} initial="pageInitial" animate="pageAnimate"
+            variants={{
+            pageInitial: {
+            y : '-5vh' ,
+                
+                opacity: '0',
+            },
+            pageAnimate: {
+                y : '0vh' ,
+                
+                opacity: '1',
+                transition: {
+                delay: .5 ,
+                staggerChildren: 1
+                }
+            },
+            }} 
+        
+        >
 
                 <h3>THE TERMINOLOGY…</h3>
                 <h1>{techn[which]}</h1>
                 <p>{description[which]}</p>
 
-        </div>
+        </motion.div>
 
        
        
         </section>
-       <section className={tech.right} > 
+       <motion.section className={tech.right}
+
+
+            key={which} initial="pageInitial" animate="pageAnimate"
+            variants={{
+            pageInitial: {
+            x : '-5vh' ,
+                
+                opacity: '0',
+            },
+            pageAnimate: {
+                x : '0vh' ,
+                
+                opacity: '1',
+                transition: {
+                delay: .5 ,
+                staggerChildren: 1
+                }
+            },
+}} 
+       
+       > 
        
        <div className={tech.imgWrap} > 
 
@@ -68,7 +111,7 @@ const description = ["A launch vehicle or carrier rocket is a rocket-propelled v
        </div>
 
        
-        </section>
+        </motion.section>
          
          
     </div>   

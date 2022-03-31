@@ -46,7 +46,6 @@
             @include flex(center,center,column-reverse)
         @media only screen and (min-width: 501px) and (max-width: 1001px)          
             @include flex(center,center,column)  
-            
         @media only screen and (min-width: 1002px)
             @include flex(center,space-around,row wrap)    
         .left,.right
@@ -77,6 +76,7 @@
                     height: fit-content
                     max-height: 100%
         .left
+            
             @media only screen and (min-width: 1px) and (max-width: 1001px)  
                 @include flex(center,space-between,column)
                 padding: 5vw 0
@@ -84,20 +84,21 @@
                     text-align: center
                     width: fit-content
             @media only screen and (min-width:1002px)    
-                @include flex(flex-start,center,row wrap)
+                @include flex(flex-start,center,column)
+                gap: 5vw
                 > *
                     text-align: left
                     width: 100%
             h1
                 text-transform: uppercase
-                
                 max-width: 100%
                 @media only screen and (min-width: 1px) and (max-width: 1001px)  
-                    font-size: 7vw
+                    font-size: 5vw
                     letter-spacing: .8vw
                 @media only screen and (min-width:1002px)    
-                    font-size: 10vh
+                    font-size: 5vh
                     letter-spacing: 1vw
+                    padding: 3vh 0
             h3
                 @media only screen and (min-width: 1px) and (max-width: 1001px)  
                     font-size: 4vw
@@ -112,8 +113,8 @@
                 color: $blue
                 @media only screen and (min-width: 1px) and (max-width: 1001px)   
                     text-align: center
-                    width: 70%
-                    padding-right: 0
+                    width: 100%
+                    padding: .5vh 4vw
                 @media only screen and (min-width:1002px)  
                     text-align: left  
                     padding-right: 10vw 

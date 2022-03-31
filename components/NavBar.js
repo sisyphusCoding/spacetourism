@@ -26,12 +26,32 @@ const NavBar = () => {
     }
 
 
+
+    const detectPage = () =>{
+      
+        const list =[ '/' ,'/destination', '/crew', '/technology']
+    
+        const id =   list.indexOf(window.location.pathname);
+    
+        setWhich(id)
+        
+  
+    }
+
+    if(typeof window !== 'undefined'){
+
+        window.addEventListener('load', detectPage)
+
+    }
+
+
   
     return (
         <ul className={navbar.nav} >
             <li className={navbar.logoIMG}>
                 <img src='https://i.ibb.co/cvWqH1b/logo.png' alt ="logo" />
             </li>
+            <span className={navbar.line} ></span>
             <button onClick={()=>{setMenu(!menu)}} className={navbar.menu}>
                 <div style={menu ? {transform: 'rotate(45deg)' , top: '50%'} : {transform: 'rotate(0)' , top: '.3vh'}  } ></div>
                 <div style={menu ? { opacity: '0' , scale: '0.5``'}: {opacity: '1' ,scale: '1'}} ></div>

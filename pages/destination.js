@@ -5,7 +5,7 @@ import mars from '../images/destination/image-mars.webp'
 import europa from '../images/destination/image-europa.webp'
 import titan from '../images/destination/image-titan.webp'
 
-
+import { motion } from 'framer-motion'
 
 import { useState } from 'react'
 
@@ -31,11 +31,32 @@ const Destination = () => {
 <section className={dest.content} >
         <div className={dest.left}>
           <div className={dest.text} ><span>01</span>Pick your destination</div>
-          <div className={dest.imgWrap}  >
+          <motion.div className={dest.imgWrap}
+          
+          key={which} initial="pageInitial" animate="pageAnimate"
+      variants={{
+        pageInitial: {
+          rotate : '-360deg' ,
+          scale: '0' ,
+          opacity: '0',
+        },
+        pageAnimate: {
+          rotate : '0deg',
+          scale: '1' ,
+          opacity: '1',
+          transition: {
+            delay: .5 ,
+            staggerChildren: 1
+          }
+        },
+      }}
+
+          >
+
                 <Image src={imgs[which]} alt={planets[which]} layout='responsive' />
-          </div>
+          </motion.div>
         </div>
-        <div className={dest.right}> 
+    <div className={dest.right}> 
 
         <div className={dest.topR} >
             {planets.map((planet,index) => (
@@ -45,6 +66,27 @@ const Destination = () => {
             ))}
         </div>
 
+
+              
+       <motion.div className={dest.anim}
+         key={which} initial="pageInitial" animate="pageAnimate"
+         variants={{
+           pageInitial: {
+            y : '-10vh' ,
+             
+             opacity: '0',
+           },
+           pageAnimate: {
+             y : '0vh' ,
+             
+             opacity: '1',
+             transition: {
+               delay: .5 ,
+               staggerChildren: 1
+             }
+           },
+         }} 
+       >
        <h1>{planets[which]}</h1>         
 
        <p>{description[which]}</p>
@@ -62,10 +104,14 @@ const Destination = () => {
           <h3>{time[which]}</h3>      
          </div>
 
+    
        </div>
+       </motion.div>       
 
     
         </div>
+
+
       </section>  
         
     </div>

@@ -8,7 +8,7 @@ import crew1 from "../images/crew/image-mark-shuttleworth.webp"
 import crew2 from "../images/crew/image-victor-glover.webp"
 import crew3 from "../images/crew/image-anousheh-ansari.webp"
 
-
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 const Crew = () => {
@@ -30,9 +30,30 @@ const Crew = () => {
 <section className={crew.content} >
         <div className={crew.text} ><span>02</span>Meet your crew member</div>      
         <div className={crew.left}>
+
+            <motion.div
+             key={person} initial="pageInitial" animate="pageAnimate"
+             variants={{
+               pageInitial: {
+                y : '-10vh' ,
+                 
+                 opacity: '0',
+               },
+               pageAnimate: {
+                 y : '0vh' ,
+                 
+                 opacity: '1',
+                 transition: {
+                   delay: .5 ,
+                   staggerChildren: 1
+                 }
+               },
+             }} 
+            >
             <h3>{role[person]}</h3>
             <h1>{name[person]}</h1>
             <p>{description[person]}</p>
+            </motion.div> 
 
             <section>
                 {name.map((item, index) => (
@@ -43,9 +64,28 @@ const Crew = () => {
         </div>
         <div className={crew.right}> 
                     
-        <div className={crew.imgWrap}  >
+        <motion.div className={crew.imgWrap}
+        key={person} initial="pageInitial" animate="pageAnimate"
+        variants={{
+          pageInitial: {
+           y : '10vh' ,
+            
+            opacity: '0',
+          },
+          pageAnimate: {
+            y : '0vh' ,
+            
+            opacity: '1',
+            transition: {
+              delay: .5 ,
+              staggerChildren: 1
+            }
+          },
+        }} 
+        
+        >
             <Image src={imgs[person]} alt={name[person]}  layout="responsive" />
-            </div>
+            </motion.div>
         </div>
       </section>  
         
