@@ -1,48 +1,55 @@
 
 import '../styles/global.sass'
 
+import Head from 'next/head'
+
 
 import Layout from '../components/Layout'
 import { motion, AnimatePresence } from "framer-motion"
 
 
+const variants = {
+  hidden: { opacity: 0, x: -200, y: 0 },
+  enter: { opacity: 1, x: 0, y: 0 },
+  exit: { opacity: 0, x: 0, y: -200 },
+}
+
+
 function MyApp({ Component, pageProps , router }) {
+
+
+
 
 
   return (
 <Layout>
-<AnimatePresence >
+<AnimatePresence exitBeforeEnter>
 
   <motion.div
-  key={router.route} initial="pageInitial" animate="pageAnimate" 
-    variants={{
-      pageInitial: {
-        opacity: 0, x: 100,
-        transition: {
-          staggerChildren: 1,
-          delay: .2,
-          
-        }
-      },
-      pageAnimate: {
-        opacity: 1, x: 0,
-        transition: {
-          staggerChildren: 1,
-          
-        }
-       
-      },
-      exit: {
-        opacity: 0, x: -300,
-        transition: {
-          staggerChildren: 1 ,
-        }
-      },
-
-    }   }
-
-
+ key={router.route}
+ initial="hidden"
+ animate="enter"
+ exit="exit"
+ variants={variants}
+ transition = {{
+    type: "spring", stiffness: 400 ,
+    damping: 20,
+    //type: 'tween' ,
+    //anticipate,
+   staggerChildren: 0.5,
+ }}
   >
+
+  
+    <Head>
+        <title>My page title</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+        <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;300&display=swap" rel="stylesheet"></link>
+      </Head>
+    
 
       <Component {...pageProps} />
 
