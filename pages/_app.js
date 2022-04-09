@@ -22,35 +22,44 @@ function MyApp({ Component, pageProps , router }) {
 
 
   return (
-<Layout>
-<AnimatePresence exitBeforeEnter>
 
-  <motion.div
+<Layout>
+
+<AnimatePresence exitBeforeEnter>
+<motion.div
  key={router.route}
  initial="hidden"
  animate="enter"
  exit="exit"
  variants={variants}
  transition = {{
-    type: "spring", stiffness: 190 ,
+    type: "spring", stiffness: 100  , damping: 10
  }}
-  >
+>
 
   
+
     <Head>
-        <title>My page title</title>
+        <title>Space Tourism</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="preconnect" href="https://fonts.googleapis.com"></link> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin></link>
         <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet"></link>
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;300&display=swap" rel="stylesheet"></link>
       </Head>
-    
 
+
+
+  
       <Component {...pageProps} />
 
-  </motion.div></AnimatePresence>
-  </Layout>
+      
+  </motion.div>
+  
+  </AnimatePresence>
+  </Layout>    
+  
+
 
 )
 }
