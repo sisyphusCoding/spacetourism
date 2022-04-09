@@ -32,11 +32,7 @@ function MyApp({ Component, pageProps , router }) {
  exit="exit"
  variants={variants}
  transition = {{
-    type: "spring", stiffness: 400 ,
-    damping: 20,
-    //type: 'tween' ,
-    //anticipate,
-   staggerChildren: 0.5,
+    type: "spring", stiffness: 190 ,
  }}
   >
 
