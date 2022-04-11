@@ -9,9 +9,9 @@ import { motion, AnimatePresence } from "framer-motion"
 
 
 const variants = {
-  hidden: { opacity: 0, x: 0, y: -200 , scale: 0 },
-  enter: { opacity: 1, x: 0, y: 0 , scale: 1 },
-  exit: { opacity: 0, x: 0, y: -200 , scale: 0 },
+  hidden: { opacity: 0, x: 0, y: -200  },
+  enter: { opacity: 1, x: 0, y: 0 },
+  exit: { opacity: 0, x: 0, y: -200},
 }
 
 
@@ -23,23 +23,9 @@ function MyApp({ Component, pageProps , router }) {
 
   return (
 
-<Layout>
+    <Layout>
 
-<AnimatePresence exitBeforeEnter>
-<motion.div
- key={router.route}
- initial="hidden"
- animate="enter"
- exit="exit"
- variants={variants}
- transition = {{
-    type: "spring", stiffness: 100  , damping: 10
- }}
->
-
-  
-
-    <Head>
+      <Head>
         <title>Space Tourism</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="preconnect" href="https://fonts.googleapis.com"></link> 
@@ -49,19 +35,33 @@ function MyApp({ Component, pageProps , router }) {
       </Head>
 
 
+        <AnimatePresence exitBeforeEnter>
+      <motion.div
+        key={router.route}
+        initial="hidden"
+        animate="enter"
+        exit="exit"
+        variants={variants}
+        transition = {{
+          type : 'spring',
+          stiffness: 100,
+          staggerChildren: 0.5,
+        }}
+      >
 
-  
+
       <Component {...pageProps} />
 
-      
-  </motion.div>
-  
-  </AnimatePresence>
-  </Layout>    
-  
+        </motion.div> 
+      </AnimatePresence>
 
 
-)
+
+    </Layout>    
+
+
+
+  )
 }
 
 
